@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May  8 10:54:25 2026
 
-@author: david
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 from numba import njit
