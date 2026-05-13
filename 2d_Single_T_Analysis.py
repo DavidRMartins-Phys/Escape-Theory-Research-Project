@@ -254,7 +254,7 @@ def Theory_LO(gamma, det_w_s, det_w_m, lambda_plus, beta, E_b):
   return f
 # %%
 'extraction of damping array:'
-damping = np.load('C:/Users/david/OneDrive - The University of Nottingham/Uni/Year 4/Escape Theory/Spring/ADA Code files/2D files/Dataset 22 - 2d Temp dependence/damping_array.npy')
+damping = np.load('damping_array.npy')
 Theory = np.zeros(len(damping))
 lambda_array = np.zeros(len(damping))
 for i in range(len(damping)):
@@ -265,7 +265,7 @@ for i in range(len(damping)):
 R, E = np.zeros(len(damping)), np.zeros(len(damping))
 
 for i in range(len(damping)):
-    mat = np.load(f'C:/Users/david/OneDrive - The University of Nottingham/Uni/Year 4/Escape Theory/Spring/ADA Code files/2D files/Dataset 19 - 2d T1.5/escape_gamma_{i}.npy')
+    mat = np.load(f'escape_gamma_{i}.npy')
     R[i],E[i] = Rate_Stats(mat, Ensembles, damping[i], lambda_array[i], runs)
 # %%
 'Determining the chi^2 of the fit, for gamma>2'
