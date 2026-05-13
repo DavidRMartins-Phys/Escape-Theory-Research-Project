@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May  1 13:42:53 2026
 
+"""
 @author: david
 """
 
