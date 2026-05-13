@@ -166,9 +166,9 @@ def Theory_NLO(gamma, omega_b_sq, omega_M_sq, T, E_b):
     Value = Gamma_0*Correction
     return Value
 # %%
-damping_array = np.load('C:/Users/david/OneDrive - The University of Nottingham/Uni/Year 4/Escape Theory/Spring/ADA Code files/1D files/Dataset 8 - Temp Dependence/damping array.npy')
-T_array = np.load('C:/Users/david/OneDrive - The University of Nottingham/Uni/Year 4/Escape Theory/Spring/ADA Code files/1D files/Dataset 8 - Temp Dependence/T_array.npy')
-Ratio = np.load('C:/Users/david/OneDrive - The University of Nottingham/Uni/Year 4/Escape Theory/Spring/ADA Code files/1D files/Dataset 8 - Temp Dependence/Ratio_array.npy')
+damping_array = np.load('damping array.npy')
+T_array = np.load('T_array.npy')
+Ratio = np.load('Ratio_array.npy')
 
 #Set up the arrays for the rate and error.
 Rate = np.zeros((len(T_array), len(damping_array)))
@@ -177,7 +177,7 @@ TheoryNLO = np.zeros((len(T_array), len(damping_array)))
 TheoryLO = np.zeros((len(T_array), len(damping_array)))
 for i in range(len(T_array)):
     for j in range(len(damping_array)):
-        mat = np.load(f"C:/Users/david/OneDrive - The University of Nottingham/Uni/Year 4/Escape Theory/Spring/ADA Code files/1D files/Dataset 8 - Temp Dependence/escape_gamma_{j}_temp_{i}.npy")
+        mat = np.load(f"escape_gamma_{j}_temp_{i}.npy")
         #using the linear regression method
         _,_,_,_,Rate[i,j], Error[i,j]= Rate_Stats(mat, ensemble_num, damping_array[j], T_array[i])
         TheoryNLO[i,j] = Theory_NLO(damping_array[j], omega_b_sq, omega_M_sq, T_array[i], E_b)
